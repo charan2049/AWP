@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>factorial</title>
+</head>
+<body>
+    <input type="number" id="num" placeholder="Enter a number">
+    <button onclick=findFactorial()>factorial</button>
+    <p>Result :<span id="result"></span></p>
+    <script>
+        function factorial(n){
+            if(n==0||n==1) return 1;
+            let temp=1;
+            for(let i=2;i<=n;i++){
+                temp = temp*i;
+            }
+            return temp;
+        }
+        function findFactorial(){
+            const a = parseInt(document.getElementById("num").value);
+            const fact = factorial(a);
+            document.getElementById("result").textContent=fact;
+        }
+    </script>
+</body>
+</html>

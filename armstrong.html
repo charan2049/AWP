@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ArmstrongNum</title>
+</head>
+<body>
+    <input type="number" id="num" placeholder="Enter a number">
+    <button onclick=isArmstrong()>isArmstrong</button>
+    <p>Result :<span id="result"></span></p>
+    <script>
+        function isArmstrong(){
+            n = parseInt(document.getElementById("num").value);
+            let temp = n;
+            let res =0;
+            while(temp>0){
+                let flag = temp%10;
+                res+=(flag*flag*flag);
+                temp = Math.floor(temp/10);
+            }
+            let a = " the element is an armstrong number"
+            let b = " the element is not an armstrong number"
+            if(res==n) document.getElementById("result").textContent=a;
+            else document.getElementById("result").textContent=b;
+        }
+    </script>
+</body>
+</html>
